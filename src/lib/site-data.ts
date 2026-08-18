@@ -36,15 +36,16 @@ export type BlogPost = {
 };
 
 export const siteConfig = {
-  name: "Your Name",
+  name: "Satyam Singh",
   role: "Frontend Developer",
-  email: "hello@example.com",
-  location: "Your City, Country",
+  email: "satyamjsr999@gmail.com",
+  location: "Jamshedpur, India",
   intro:
     "Frontend developer with nearly 4 years of experience building scalable web applications with React, Next.js, and TypeScript.",
   summary:
     "I focus on frontend architecture, reusable component systems, state management, performance, and intuitive user experiences for complex product workflows.",
-  availability: "Open to frontend roles, product teams, and freelance opportunities.",
+  availability:
+    "Open to frontend roles, product teams, and freelance opportunities.",
   socialLinks: [
     { label: "GitHub", href: "https://github.com/your-handle" },
     { label: "LinkedIn", href: "https://linkedin.com/in/your-handle" },
@@ -78,6 +79,19 @@ export const experiences: ExperienceItem[] = [
   {
     company: "Your Company",
     role: "Senior Frontend Developer",
+    duration: "2024 - Present",
+    summary:
+      "Lead frontend development for product features that require scalability, maintainability, and polished user experience.",
+    highlights: [
+      "Owned feature delivery from requirements to production rollout.",
+      "Improved component reuse and consistency across the application.",
+      "Collaborated with product, design, and backend teams on complex workflows.",
+    ],
+    stack: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
+  },
+  {
+    company: "Mid Company",
+    role: "Senior Developer",
     duration: "2024 - Present",
     summary:
       "Lead frontend development for product features that require scalability, maintainability, and polished user experience.",
