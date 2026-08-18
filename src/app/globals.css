@@ -15,6 +15,8 @@
   --tag-background: rgba(249, 115, 22, 0.14);
   --dot: rgba(194, 120, 30, 0.45);
   --selection: rgba(249, 115, 22, 0.28);
+  --cursor-core: rgba(220, 38, 38, 0.32);
+  --cursor-glow: rgba(249, 115, 22, 0.22);
 }
 
 .dark {
@@ -32,6 +34,8 @@
   --tag-background: rgba(96, 165, 250, 0.14);
   --dot: rgba(148, 163, 184, 0.4);
   --selection: rgba(96, 165, 250, 0.28);
+  --cursor-core: rgba(250, 204, 21, 0.26);
+  --cursor-glow: rgba(96, 165, 250, 0.18);
 }
 
 @theme inline {
@@ -43,6 +47,8 @@
 
 * {
   box-sizing: border-box;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 html {
@@ -50,13 +56,16 @@ html {
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+.page-backdrop {
+  background-color: var(--background);
   background-image:
-    radial-gradient(circle at top left, color-mix(in srgb, var(--accent) 18%, transparent) 0, transparent 34%),
-    radial-gradient(circle at top right, color-mix(in srgb, var(--accent-strong) 16%, transparent) 0, transparent 28%),
-    linear-gradient(180deg, color-mix(in srgb, var(--surface) 30%, transparent), transparent 55%);
+    radial-gradient(circle at 12% 18%, color-mix(in srgb, var(--accent) 16%, transparent), transparent 32%),
+    radial-gradient(circle at 88% 12%, color-mix(in srgb, var(--accent-strong) 14%, transparent), transparent 30%);
 }
 
 a {

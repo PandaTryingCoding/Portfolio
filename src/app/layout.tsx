@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { CursorTracker } from "@/components/cursor-tracker";
 import { Geist, Geist_Mono } from "next/font/google";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
@@ -17,8 +18,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Your Name | Frontend Developer",
-    template: "%s | Your Name",
+    default: "Satyam Singh | Frontend Developer",
+    template: "%s | Satyam Singh",
   },
   description:
     "Portfolio and blog for a frontend developer focused on React, Next.js, TypeScript, architecture, and user experience.",
@@ -27,15 +28,17 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
-      lang="en"
-      data-scroll-behavior="smooth"
+      lang='en'
+      data-scroll-behavior='smooth'
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
       suppressHydrationWarning
     >
-      <body className="min-h-full bg-background text-foreground">
+      <body className='min-h-full bg-background text-foreground'>
         <ThemeProvider>
+          <div className='page-backdrop pointer-events-none fixed inset-0 z-0' />
+          <CursorTracker />
           <SiteHeader />
-          <main className="flex-1">{children}</main>
+          <main className='relative z-10 flex-1'>{children}</main>
           <SiteFooter />
         </ThemeProvider>
       </body>
