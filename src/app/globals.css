@@ -15,8 +15,8 @@
   --tag-background: rgba(249, 115, 22, 0.14);
   --dot: rgba(194, 120, 30, 0.45);
   --selection: rgba(249, 115, 22, 0.28);
-  --cursor-core: rgba(249, 115, 22, 0.38);
-  --cursor-glow: rgba(250, 204, 21, 0.2);
+  --cursor-core: rgba(220, 38, 38, 0.32);
+  --cursor-glow: rgba(249, 115, 22, 0.22);
 }
 
 .dark {
@@ -34,8 +34,8 @@
   --tag-background: rgba(96, 165, 250, 0.14);
   --dot: rgba(148, 163, 184, 0.4);
   --selection: rgba(96, 165, 250, 0.28);
-  --cursor-core: rgba(250, 204, 21, 0.22);
-  --cursor-glow: rgba(96, 165, 250, 0.16);
+  --cursor-core: rgba(250, 204, 21, 0.26);
+  --cursor-glow: rgba(96, 165, 250, 0.18);
 }
 
 @theme inline {
