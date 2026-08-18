@@ -1,8 +1,37 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: light;
+  --background: #fff7d6;
+  --foreground: #3d2208;
+  --muted-foreground: #7a5725;
+  --surface: rgba(255, 255, 255, 0.72);
+  --surface-strong: rgba(255, 245, 220, 0.94);
+  --surface-soft: rgba(255, 179, 71, 0.12);
+  --border: rgba(244, 114, 31, 0.2);
+  --accent: #f97316;
+  --accent-strong: #facc15;
+  --accent-foreground: #2a1503;
+  --tag-background: rgba(249, 115, 22, 0.14);
+  --dot: rgba(194, 120, 30, 0.45);
+  --selection: rgba(249, 115, 22, 0.28);
+}
+
+.dark {
+  color-scheme: dark;
+  --background: #050816;
+  --foreground: #edf2ff;
+  --muted-foreground: #9dabc9;
+  --surface: rgba(15, 23, 42, 0.68);
+  --surface-strong: rgba(7, 12, 26, 0.92);
+  --surface-soft: rgba(96, 165, 250, 0.1);
+  --border: rgba(148, 163, 184, 0.18);
+  --accent: #facc15;
+  --accent-strong: #60a5fa;
+  --accent-foreground: #08111f;
+  --tag-background: rgba(96, 165, 250, 0.14);
+  --dot: rgba(148, 163, 184, 0.4);
+  --selection: rgba(96, 165, 250, 0.28);
 }
 
 @theme inline {
@@ -12,15 +41,37 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  background-image:
+    radial-gradient(circle at top left, color-mix(in srgb, var(--accent) 18%, transparent) 0, transparent 34%),
+    radial-gradient(circle at top right, color-mix(in srgb, var(--accent-strong) 16%, transparent) 0, transparent 28%),
+    linear-gradient(180deg, color-mix(in srgb, var(--surface) 30%, transparent), transparent 55%);
+}
+
+a {
+  text-decoration: none;
+}
+
+::selection {
+  background: var(--selection);
+  color: var(--foreground);
+}
+
+.bg-background {
+  background-color: var(--background);
+}
+
+.text-foreground {
+  color: var(--foreground);
 }
