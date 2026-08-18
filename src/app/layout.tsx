@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { CursorTracker } from "@/components/cursor-tracker";
 import { Geist, Geist_Mono } from "next/font/google";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
@@ -34,6 +35,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-h-full bg-background text-foreground">
         <ThemeProvider>
+          <CursorTracker />
           <SiteHeader />
           <main className="flex-1">{children}</main>
           <SiteFooter />
