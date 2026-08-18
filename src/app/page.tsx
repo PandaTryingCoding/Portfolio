@@ -83,7 +83,7 @@ export default function Home() {
 
       <MotionSection
         id="experience"
-        className="border-y border-(--border) bg-(--surface-soft) py-20"
+        className="border-y border-(--border) py-20"
       >
         <div className="mx-auto w-full max-w-6xl px-6 lg:px-8">
           <SectionHeading
@@ -172,7 +172,7 @@ export default function Home() {
 
       <MotionSection
         id="skills"
-        className="border-y border-(--border) bg-(--surface-soft) py-20"
+        className="border-y border-(--border) py-20"
       >
         <div className="mx-auto w-full max-w-6xl px-6 lg:px-8">
           <SectionHeading
@@ -243,7 +243,7 @@ export default function Home() {
 
       <MotionSection
         id="contact"
-        className="border-t border-(--border) bg-linear-to-b from-background to-(--surface-soft)"
+        className="border-t border-(--border)"
       >
         <div className="mx-auto flex w-full max-w-6xl flex-col gap-6 px-6 py-20 lg:px-8 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-2xl">

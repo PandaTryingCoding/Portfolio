@@ -54,13 +54,16 @@ html {
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+.page-backdrop {
+  background-color: var(--background);
   background-image:
-    radial-gradient(circle at top left, color-mix(in srgb, var(--accent) 18%, transparent) 0, transparent 34%),
-    radial-gradient(circle at top right, color-mix(in srgb, var(--accent-strong) 16%, transparent) 0, transparent 28%),
-    linear-gradient(180deg, color-mix(in srgb, var(--surface) 30%, transparent), transparent 55%);
+    radial-gradient(circle at 12% 18%, color-mix(in srgb, var(--accent) 16%, transparent), transparent 32%),
+    radial-gradient(circle at 88% 12%, color-mix(in srgb, var(--accent-strong) 14%, transparent), transparent 30%);
 }
 
 a {

@@ -35,6 +35,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-h-full bg-background text-foreground">
         <ThemeProvider>
+          <div className="page-backdrop pointer-events-none fixed inset-0 z-0" />
           <CursorTracker />
           <SiteHeader />
           <main className="relative z-10 flex-1">{children}</main>
