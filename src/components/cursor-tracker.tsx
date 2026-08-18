@@ -19,8 +19,16 @@ export function CursorTracker() {
   const pointerY = useMotionValue(-240);
   const rotation = useMotionValue(45);
 
-  const glowX = useSpring(pointerX, { damping: 26, stiffness: 160, mass: 0.45 });
-  const glowY = useSpring(pointerY, { damping: 26, stiffness: 160, mass: 0.45 });
+  const glowX = useSpring(pointerX, {
+    damping: 26,
+    stiffness: 160,
+    mass: 0.45,
+  });
+  const glowY = useSpring(pointerY, {
+    damping: 26,
+    stiffness: 160,
+    mass: 0.45,
+  });
   const iconX = useSpring(pointerX, { damping: 30, stiffness: 240, mass: 0.3 });
   const iconY = useSpring(pointerY, { damping: 30, stiffness: 240, mass: 0.3 });
   const shipRotate = useSpring(rotation, {
@@ -83,9 +91,9 @@ export function CursorTracker() {
   const isDark = resolvedTheme === "dark";
 
   return (
-    <div className="pointer-events-none fixed inset-0 z-10 overflow-hidden">
+    <div className='pointer-events-none fixed inset-0 z-0 overflow-hidden'>
       <motion.div
-        className="absolute top-0 left-0 h-80 w-80 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,var(--cursor-core)_0%,var(--cursor-glow)_42%,transparent_74%)] blur-3xl"
+        className='absolute top-0 left-0 h-80 w-80 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,var(--cursor-core)_0%,var(--cursor-glow)_42%,transparent_74%)] blur-3xl'
         style={{ x: glowX, y: glowY }}
         animate={{ opacity: visible ? 0.9 : 0 }}
         transition={{ duration: 0.25, ease: "easeOut" }}
@@ -93,28 +101,28 @@ export function CursorTracker() {
 
       {isDark ? (
         <motion.div
-          className="absolute top-0 left-0 h-24 w-24 -translate-x-1/2 -translate-y-1/2"
+          className='absolute top-0 left-0 h-18 w-18 -translate-x-1/2 -translate-y-1/2'
           style={{ x: iconX, y: iconY, rotate: shipRotate }}
           animate={{ opacity: visible ? 1 : 0 }}
           transition={{ duration: 0.18, ease: "easeOut" }}
         >
           <motion.img
-            src="/cursor/falcon.png"
-            alt=""
-            aria-hidden="true"
-            className="h-full w-full object-contain drop-shadow-[0_0_18px_rgba(250,204,21,0.55)]"
+            src='/cursor/falcon.png'
+            alt=''
+            aria-hidden='true'
+            className='h-full w-full object-contain drop-shadow-[0_0_18px_rgba(250,204,21,0.55)]'
             animate={{ y: [0, -3, 0] }}
             transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
           />
         </motion.div>
       ) : (
         <motion.div
-          className="absolute top-0 left-0 h-20 w-20 -translate-x-1/2 -translate-y-1/2"
+          className='absolute top-0 left-0 h-12 w-12 -translate-x-1/2 -translate-y-1/2'
           style={{ x: iconX, y: iconY }}
           animate={{
             opacity: visible ? 1 : 0,
             scale: visible ? [0.9, 1.12, 0.9] : 0.7,
-            rotate: visible ? [0, 16, 0] : 0,
+            rotate: visible ? [0, 16, 0] : 0.7,
           }}
           transition={{
             opacity: { duration: 0.18, ease: "easeOut" },
@@ -123,10 +131,10 @@ export function CursorTracker() {
           }}
         >
           <img
-            src="/cursor/uzumaki-crest.png"
-            alt=""
-            aria-hidden="true"
-            className="h-full w-full object-contain drop-shadow-[0_0_16px_rgba(220,38,38,0.55)]"
+            src='/cursor/uzumaki-crest.png'
+            alt=''
+            aria-hidden='true'
+            className='h-full w-full object-contain drop-shadow-[0_0_16px_rgba(220,38,38,0.55)]'
           />
         </motion.div>
       )}

@@ -18,7 +18,7 @@ import {
 
 export default function Home() {
   return (
-    <div className="bg-background text-foreground">
+    <div className="text-foreground">
       <section className="border-b border-(--border)">
         <div className="mx-auto grid w-full max-w-6xl gap-16 px-6 py-20 lg:grid-cols-[1.2fr_0.8fr] lg:px-8 lg:py-28">
           <FadeIn className="max-w-3xl">
