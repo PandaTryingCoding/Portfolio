@@ -20,7 +20,7 @@ function shortestAngle(from: number, to: number) {
 
 const BOLT_DISTANCE = 1080;
 const BOLT_DURATION = 1;
-const FALCON_NOSE_OFFSET = 45;
+const FALCON_NOSE_OFFSET = -45;
 
 export function CursorTracker() {
   const { resolvedTheme } = useTheme();
