@@ -26,8 +26,8 @@ export function ExperienceCard({ experience }: ExperienceCardProps) {
 
       <ul className='mt-6 space-y-3 text-foreground'>
         {experience.highlights.map((highlight) => (
-          <li key={highlight} className='flex gap-3'>
-            <span className='mt-2 h-2 w-2 rounded-full bg-(--accent)' />
+          <li key={highlight} className='flex items-start gap-3'>
+            <span className='mt-2 size-2 shrink-0 rounded-full bg-(--accent)' />
             <span>{highlight}</span>
           </li>
         ))}
