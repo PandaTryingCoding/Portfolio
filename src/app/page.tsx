@@ -68,8 +68,8 @@ export default function Home() {
       >
         <SectionHeading
           eyebrow='About'
-          title='A portfolio built to reflect how you work.'
-          description='This starter is designed to help you present your experience, technical strengths, and product thinking without needing to rebuild the structure later.'
+          title='How I approach frontend work.'
+          description='I care about systems that scale with the product — reusable UI, clear state boundaries, and experiences that feel reliable under real-world conditions.'
         />
 
         <StaggerGroup className='mt-12 grid gap-6 lg:grid-cols-2'>
@@ -88,8 +88,8 @@ export default function Home() {
         <div className='mx-auto w-full max-w-6xl px-6 lg:px-8'>
           <SectionHeading
             eyebrow='Experience'
-            title='Professional experience with room for impact-focused storytelling.'
-            description='Replace the placeholder content with your roles, ownership areas, and outcomes. The layout is tuned for concise, high-signal experience summaries.'
+            title='Roles where ownership and measurable impact mattered.'
+            description='From learning platforms to audio creator tools — shipping features end-to-end with product, design, and backend partners.'
           />
 
           <StaggerGroup className='mt-12 space-y-6'>
@@ -108,8 +108,8 @@ export default function Home() {
       >
         <SectionHeading
           eyebrow='Projects'
-          title='Case-study style project highlights.'
-          description='These cards are structured to help you talk about problem space, technical depth, and measurable impact rather than only listing technologies.'
+          title='Selected work and builds.'
+          description='A mix of production platform work and full-stack projects that show how I think about product UI, data, and real integrations.'
         />
 
         <StaggerGroup className='mt-12 grid gap-6 lg:grid-cols-3'>
@@ -125,8 +125,8 @@ export default function Home() {
         <div className='mx-auto w-full max-w-6xl px-6 lg:px-8'>
           <SectionHeading
             eyebrow='Skills'
-            title='Grouped by the kind of frontend work you actually do.'
-            description='The section is intentionally structured around capability areas so the content reads like a professional profile, not a keyword dump.'
+            title='Tools and practices I use day to day.'
+            description='Grouped by how I actually ship — languages, UI systems, data layers, and the tooling around them.'
           />
 
           <StaggerGroup className='mt-12 grid gap-6 md:grid-cols-2'>

@@ -84,3 +84,23 @@ a {
 .text-foreground {
   color: var(--foreground);
 }
+
+@keyframes motion-enter {
+  from {
+    transform: translateY(14px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.motion-enter {
+  animation: motion-enter 0.55s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-enter {
+    animation: none;
+    transform: none;
+  }
+}

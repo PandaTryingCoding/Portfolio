@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
 import type { ReactNode } from "react";
 
 type MotionProps = {
@@ -13,17 +10,18 @@ type MotionSectionProps = MotionProps & {
   id?: string;
 };
 
+function joinClassNames(...parts: Array<string | undefined>) {
+  return parts.filter(Boolean).join(" ");
+}
+
 export function FadeIn({ children, className, delay = 0 }: MotionProps) {
   return (
-    <motion.div
-      className={className}
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.25 }}
-      transition={{ duration: 0.6, ease: "easeOut", delay }}
+    <div
+      className={joinClassNames("motion-enter", className)}
+      style={{ animationDelay: `${delay}s` }}
     >
       {children}
-    </motion.div>
+    </div>
   );
 }
 
@@ -31,54 +29,30 @@ export function MotionSection({
   children,
   className,
   delay = 0,
-  ...props
+  id,
 }: MotionSectionProps) {
   return (
-    <motion.section
-      {...props}
-      className={className}
-      initial={{ opacity: 0, y: 36 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.15 }}
-      transition={{ duration: 0.7, ease: "easeOut", delay }}
+    <section
+      id={id}
+      className={joinClassNames("motion-enter", className)}
+      style={{ animationDelay: `${delay}s` }}
     >
       {children}
-    </motion.section>
+    </section>
   );
 }
 
 export function StaggerGroup({ children, className }: MotionProps) {
-  return (
-    <motion.div
-      className={className}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.15 }}
-      variants={{
-        hidden: {},
-        visible: {
-          transition: {
-            staggerChildren: 0.12,
-          },
-        },
-      }}
-    >
-      {children}
-    </motion.div>
-  );
+  return <div className={className}>{children}</div>;
 }
 
-export function StaggerItem({ children, className }: MotionProps) {
+export function StaggerItem({ children, className, delay = 0 }: MotionProps) {
   return (
-    <motion.div
-      className={className}
-      variants={{
-        hidden: { opacity: 0, y: 28 },
-        visible: { opacity: 1, y: 0 },
-      }}
-      transition={{ duration: 0.55, ease: "easeOut" }}
+    <div
+      className={joinClassNames("motion-enter", className)}
+      style={{ animationDelay: `${delay}s` }}
     >
       {children}
-    </motion.div>
+    </div>
   );
 }
