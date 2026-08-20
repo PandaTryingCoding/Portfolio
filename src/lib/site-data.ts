@@ -47,8 +47,11 @@ export const siteConfig = {
   availability:
     "Open to frontend roles, product teams, and freelance opportunities.",
   socialLinks: [
-    { label: "GitHub", href: "https://github.com/your-handle" },
-    { label: "LinkedIn", href: "https://linkedin.com/in/your-handle" },
+    { label: "GitHub", href: "https://github.com/PandaTryingCoding" },
+    {
+      label: "LinkedIn",
+      href: "https://www.linkedin.com/in/satyam-singh-225064220/",
+    },
     { label: "Resume", href: "#" },
   ],
 };
