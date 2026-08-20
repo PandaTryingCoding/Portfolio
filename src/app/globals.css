@@ -64,8 +64,16 @@ body {
 .page-backdrop {
   background-color: var(--background);
   background-image:
-    radial-gradient(circle at 12% 18%, color-mix(in srgb, var(--accent) 16%, transparent), transparent 32%),
-    radial-gradient(circle at 88% 12%, color-mix(in srgb, var(--accent-strong) 14%, transparent), transparent 30%);
+    radial-gradient(
+      circle at 12% 18%,
+      color-mix(in srgb, var(--accent) 16%, transparent),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 88% 12%,
+      color-mix(in srgb, var(--accent-strong) 14%, transparent),
+      transparent 30%
+    );
 }
 
 a {
@@ -83,24 +91,4 @@ a {
 
 .text-foreground {
   color: var(--foreground);
-}
-
-@keyframes motion-enter {
-  from {
-    transform: translateY(14px);
-  }
-  to {
-    transform: translateY(0);
-  }
-}
-
-.motion-enter {
-  animation: motion-enter 0.55s ease-out;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .motion-enter {
-    animation: none;
-    transform: none;
-  }
 }
