@@ -3,6 +3,12 @@ export type NavItem = {
   href: string;
 };
 
+export type SocialLink = {
+  label: string;
+  href: string;
+  target?: string;
+};
+
 export type SkillGroup = {
   title: string;
   items: string[];
@@ -39,6 +45,7 @@ export const siteConfig = {
   name: "Satyam Singh",
   role: "Frontend Developer",
   email: "satyamjsr999@gmail.com",
+  phone: "+918969833349",
   location: "Jamshedpur, India",
   intro:
     "Frontend developer with nearly 4 years of experience building scalable web applications with React, Next.js, and TypeScript.",
@@ -52,7 +59,7 @@ export const siteConfig = {
       label: "LinkedIn",
       href: "https://www.linkedin.com/in/satyam-singh-225064220/",
     },
-    { label: "Resume", href: "#" },
+    { label: "Resume", href: "/resume.pdf", target: "_blank" },
   ],
 };
 

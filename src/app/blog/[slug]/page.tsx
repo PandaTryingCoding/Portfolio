@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { BlogComingSoon } from "@/components/blog-coming-soon";
+import { isBlogEnabled } from "@/lib/features";
 import { blogPosts } from "@/lib/site-data";
 
 type BlogPostPageProps = {
@@ -10,6 +12,10 @@ type BlogPostPageProps = {
 };
 
 export async function generateStaticParams() {
+  if (!isBlogEnabled()) {
+    return [];
+  }
+
   return blogPosts.map((post) => ({
     slug: post.slug,
   }));
@@ -18,6 +24,13 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: BlogPostPageProps): Promise<Metadata> {
+  if (!isBlogEnabled()) {
+    return {
+      title: "Coming Soon",
+      description: "Blog articles are coming soon.",
+    };
+  }
+
   const { slug } = await params;
   const post = blogPosts.find((entry) => entry.slug === slug);
 
@@ -34,6 +47,10 @@ export async function generateMetadata({
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
+  if (!isBlogEnabled()) {
+    return <BlogComingSoon />;
+  }
+
   const { slug } = await params;
   const post = blogPosts.find((entry) => entry.slug === slug);
 

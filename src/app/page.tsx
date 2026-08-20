@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { BlogCard } from "@/components/cards/blog-card";
 import { ExperienceCard } from "@/components/cards/experience-card";
 import { ProjectCard } from "@/components/cards/project-card";
@@ -13,6 +12,7 @@ import {
 } from "@/components/motion-elements";
 import { SectionHeading } from "@/components/section-heading";
 import { ButtonLink } from "@/components/ui/button-link";
+import { isBlogEnabled } from "@/lib/features";
 import {
   blogPosts,
   experiences,
@@ -24,6 +24,8 @@ import {
 } from "@/lib/site-data";
 
 export default function Home() {
+  const blogLive = isBlogEnabled();
+
   return (
     <div className='text-foreground'>
       <section className='border-b border-(--border)'>
@@ -42,9 +44,11 @@ export default function Home() {
               <ButtonLink href='#projects' variant='solid'>
                 View Projects
               </ButtonLink>
-              <ButtonLink href='/blog'>
-                Read Blog
-              </ButtonLink>
+              {blogLive ? (
+                <ButtonLink href='/blog'>Read Blog</ButtonLink>
+              ) : (
+                <ButtonLink href='#contact'>Contact Me</ButtonLink>
+              )}
             </div>
           </FadeIn>
 
@@ -71,9 +75,7 @@ export default function Home() {
         <StaggerGroup className='mt-12 grid gap-6 lg:grid-cols-2'>
           {strengths.map((strength) => (
             <StaggerItem key={strength}>
-              <StrengthCard>
-                {strength}
-              </StrengthCard>
+              <StrengthCard>{strength}</StrengthCard>
             </StaggerItem>
           ))}
         </StaggerGroup>
@@ -137,21 +139,23 @@ export default function Home() {
         </div>
       </MotionSection>
 
-      <MotionSection className='mx-auto w-full max-w-6xl px-6 py-20 lg:px-8'>
-        <SectionHeading
-          eyebrow='Latest Writing'
-          title='A built-in blog section for your articles.'
-          description='Your blog content is driven from a single TypeScript data file today, making it easy to launch now and migrate to MDX or a CMS later.'
-        />
+      {blogLive ? (
+        <MotionSection className='mx-auto w-full max-w-6xl px-6 py-20 lg:px-8'>
+          <SectionHeading
+            eyebrow='Latest Writing'
+            title='A built-in blog section for your articles.'
+            description='Your blog content is driven from a single TypeScript data file today, making it easy to launch now and migrate to MDX or a CMS later.'
+          />
 
-        <StaggerGroup className='mt-12 grid gap-6 lg:grid-cols-3'>
-          {blogPosts.slice(0, 3).map((post) => (
-            <StaggerItem key={post.slug}>
-              <BlogCard post={post} />
-            </StaggerItem>
-          ))}
-        </StaggerGroup>
-      </MotionSection>
+          <StaggerGroup className='mt-12 grid gap-6 lg:grid-cols-3'>
+            {blogPosts.slice(0, 3).map((post) => (
+              <StaggerItem key={post.slug}>
+                <BlogCard post={post} />
+              </StaggerItem>
+            ))}
+          </StaggerGroup>
+        </MotionSection>
+      ) : null}
 
       <MotionSection id='contact' className='border-t border-(--border)'>
         <div className='mx-auto flex w-full max-w-6xl flex-col gap-6 px-6 py-20 lg:px-8 lg:flex-row lg:items-end lg:justify-between'>
@@ -176,11 +180,14 @@ export default function Home() {
             >
               {siteConfig.email}
             </ButtonLink>
+            <ButtonLink href={`tel:${siteConfig.phone}`}>
+              {siteConfig.phone}
+            </ButtonLink>
             {siteConfig.socialLinks.map((link) => (
               <ButtonLink
                 key={link.label}
                 href={link.href}
-                target='_blank'
+                target={link.target ?? '_blank'}
                 rel='noopener noreferrer'
               >
                 {link.label}

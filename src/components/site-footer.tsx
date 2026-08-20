@@ -14,6 +14,8 @@ export function SiteFooter() {
             <Link
               key={link.label}
               href={link.href}
+              target={link.target ?? '_blank'}
+              rel='noopener noreferrer'
               className="transition hover:text-(--accent)"
             >
               {link.label}

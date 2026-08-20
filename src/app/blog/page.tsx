@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import { BlogComingSoon } from "@/components/blog-coming-soon";
 import { BlogCard } from "@/components/cards/blog-card";
 import { FadeIn, StaggerGroup, StaggerItem } from "@/components/motion-elements";
+import { isBlogEnabled } from "@/lib/features";
 import { blogPosts } from "@/lib/site-data";
 
 export const metadata: Metadata = {
@@ -9,6 +11,10 @@ export const metadata: Metadata = {
 };
 
 export default function BlogPage() {
+  if (!isBlogEnabled()) {
+    return <BlogComingSoon />;
+  }
+
   return (
     <div className="mx-auto w-full max-w-5xl px-6 py-20 lg:px-8">
       <FadeIn className="max-w-3xl">
