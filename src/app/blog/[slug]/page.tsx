@@ -59,31 +59,31 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   }
 
   return (
-    <article className="mx-auto w-full max-w-3xl px-6 py-20 lg:px-8">
+    <article className='mx-auto w-full max-w-3xl px-6 py-20 lg:px-8'>
       <Link
-        href="/blog"
-        className="text-sm font-medium text-(--accent) transition hover:text-(--accent-strong)"
+        href='/blog'
+        className='text-sm font-medium text-(--accent) transition hover:text-(--accent-strong)'
       >
         Back to blog
       </Link>
 
-      <header className="mt-8 border-b border-(--border) pb-10">
-        <div className="flex flex-wrap items-center gap-3 text-sm text-(--muted-foreground)">
+      <header className='mt-8 border-b border-(--border) pb-10'>
+        <div className='flex flex-wrap items-center gap-3 text-sm text-(--muted-foreground)'>
           <span>{post.publishedAt}</span>
-          <span className="h-1 w-1 rounded-full bg-(--dot)" />
+          <span className='h-1 w-1 rounded-full bg-(--dot)' />
           <span>{post.readTime}</span>
         </div>
-        <h1 className="mt-5 text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
+        <h1 className='mt-5 text-3xl font-semibold tracking-tight text-foreground sm:text-5xl'>
           {post.title}
         </h1>
-        <p className="mt-5 text-lg leading-8 text-(--muted-foreground)">
+        <p className='mt-5 text-lg leading-8 text-(--muted-foreground)'>
           {post.description}
         </p>
-        <div className="mt-6 flex flex-wrap gap-2">
+        <div className='mt-6 flex flex-wrap gap-2'>
           {post.tags.map((tag) => (
             <span
               key={tag}
-              className="rounded-full bg-(--tag-background) px-3 py-1 text-xs font-medium text-(--accent)"
+              className='rounded-full bg-(--tag-background) px-3 py-1 text-xs font-medium text-(--accent)'
             >
               {tag}
             </span>
@@ -91,7 +91,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         </div>
       </header>
 
-      <div className="mt-10 space-y-6 text-base leading-8 text-foreground">
+      <div className='mt-10 space-y-6 text-base leading-8 text-foreground'>
         {post.content.map((paragraph) => (
           <p key={paragraph}>{paragraph}</p>
         ))}

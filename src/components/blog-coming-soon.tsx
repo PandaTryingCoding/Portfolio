@@ -8,7 +8,7 @@ export function BlogComingSoon() {
         <p className='text-sm font-semibold uppercase tracking-[0.32em] text-(--accent)'>
           Blog
         </p>
-        <h1 className='mt-6 text-5xl font-semibold tracking-tight text-foreground'>
+        <h1 className='mt-6 text-3xl font-semibold tracking-tight text-foreground sm:text-5xl'>
           Coming soon.
         </h1>
         <p className='mt-6 text-lg leading-8 text-(--muted-foreground)'>

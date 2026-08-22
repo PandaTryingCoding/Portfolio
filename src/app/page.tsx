@@ -34,7 +34,7 @@ export default function Home() {
             <p className='text-sm font-semibold uppercase tracking-[0.32em] text-(--accent)'>
               {siteConfig.role}
             </p>
-            <h1 className='mt-6 text-5xl font-semibold tracking-tight text-foreground sm:text-6xl'>
+            <h1 className='mt-6 text-3xl font-semibold tracking-tight text-foreground sm:text-5xl'>
               Building scalable frontend experiences with clarity and craft.
             </h1>
             <p className='mt-6 max-w-2xl text-lg leading-8 text-(--muted-foreground)'>
@@ -187,7 +187,7 @@ export default function Home() {
               <ButtonLink
                 key={link.label}
                 href={link.href}
-                target={link.target ?? '_blank'}
+                target={link.target ?? "_blank"}
                 rel='noopener noreferrer'
               >
                 {link.label}
