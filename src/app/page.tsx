@@ -182,7 +182,7 @@ export default function Home() {
             </ButtonLink>
             <a
               href={`tel:${siteConfig.phone}`}
-              className='inline-flex items-center gap-2 rounded-full border-2 border-solid border-(--border) px-6 py-3 text-sm font-semibold text-foreground transition hover:-translate-y-0.5 hover:border-(--accent) hover:text-(--accent)'
+              className='inline-flex items-center gap-2 rounded-full border-2 border-solid border-(--border) px-6 py-3 text-sm font-semibold text-foreground transition hover:-translate-y-0.5 hover:border-(--button-outline-hover) hover:text-(--button-outline-hover)'
             >
               <svg
                 viewBox='0 0 24 24'

@@ -77,7 +77,7 @@ export function SiteHeader() {
       <div className='relative z-40 mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-4 lg:px-8'>
         <Link
           href='/'
-          className='text-xl font-semibold tracking-[0.12em] text-foreground'
+          className='text-3xl font-semibold tracking-[0.12em] text-foreground'
         >
           {siteConfig.name}
         </Link>

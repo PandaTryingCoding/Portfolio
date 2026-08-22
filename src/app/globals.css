@@ -2,21 +2,50 @@
 
 :root {
   color-scheme: light;
-  --background: #fff7d6;
-  --foreground: #3d2208;
-  --muted-foreground: #7a5725;
-  --surface: rgba(255, 255, 255, 0.72);
-  --surface-strong: rgba(255, 245, 220, 0.94);
-  --surface-soft: rgba(255, 179, 71, 0.12);
-  --border: rgba(244, 114, 31, 0.2);
-  --accent: #f97316;
-  --accent-strong: #facc15;
-  --accent-foreground: #2a1503;
-  --tag-background: rgba(249, 115, 22, 0.14);
-  --dot: rgba(194, 120, 30, 0.45);
-  --selection: rgba(249, 115, 22, 0.28);
-  --cursor-core: rgba(220, 38, 38, 0.32);
-  --cursor-glow: rgba(249, 115, 22, 0.22);
+  /* Base palette: #ffe182 · #0b0b0b · #f2a30b · #fbe407 · #0c2fdf (+ red) */
+  --background: color-mix(in srgb, #ffe182 48%, #f7f5f0);
+  --foreground: color-mix(in srgb, #0b0b0b 76%, #3a3a3a);
+  --muted-foreground: color-mix(
+    in srgb,
+    #0c2fdf 22%,
+    color-mix(in srgb, #0b0b0b 78%, #5a5a5a)
+  );
+  --surface: rgba(255, 255, 255, 0.86);
+  --surface-strong: color-mix(in srgb, #ffffff 88%, #ffe182);
+  --surface-soft: color-mix(
+    in srgb,
+    color-mix(in srgb, #f2a30b 62%, #e63946) 9%,
+    transparent
+  );
+  --border: color-mix(
+    in srgb,
+    color-mix(in srgb, #f2a30b 52%, #e63946) 15%,
+    rgba(11, 11, 11, 0.08)
+  );
+  --accent: color-mix(
+    in srgb,
+    color-mix(in srgb, #f2a30b 68%, #e63946) 78%,
+    #ffe182
+  );
+  --accent-strong: color-mix(in srgb, #fbe407 62%, #ffffff);
+  --accent-foreground: color-mix(in srgb, #0b0b0b 88%, #ffffff);
+  --tag-background: color-mix(
+    in srgb,
+    color-mix(in srgb, #f2a30b 42%, #e63946) 14%,
+    transparent
+  );
+  --dot: color-mix(in srgb, #e63946 62%, #f2a30b);
+  --selection: color-mix(
+    in srgb,
+    color-mix(in srgb, #fbe407 38%, #e63946) 20%,
+    transparent
+  );
+  --cursor-core: rgba(220, 58, 45, 0.26);
+  --cursor-glow: rgba(230, 95, 55, 0.17);
+  --button-fill: color-mix(in srgb, #0c2fdf 66%, #5a82d6);
+  --button-fill-hover: color-mix(in srgb, #0c2fdf 78%, #082fa8);
+  --button-foreground: #ffffff;
+  --button-outline-hover: color-mix(in srgb, #0c2fdf 70%, #0b0b0b);
 }
 
 .dark {
@@ -36,6 +65,10 @@
   --selection: rgba(96, 165, 250, 0.28);
   --cursor-core: rgba(250, 204, 21, 0.26);
   --cursor-glow: rgba(96, 165, 250, 0.18);
+  --button-fill: var(--accent);
+  --button-fill-hover: var(--accent-strong);
+  --button-foreground: var(--accent-foreground);
+  --button-outline-hover: var(--accent);
 }
 
 @theme inline {
@@ -63,6 +96,38 @@ body {
 
 .page-backdrop {
   background-color: var(--background);
+}
+
+html:not(.dark) .page-backdrop {
+  background-image:
+    radial-gradient(
+      circle at 8% 22%,
+      color-mix(in srgb, #f2a30b 9%, transparent),
+      transparent 36%
+    ),
+    radial-gradient(
+      circle at 94% 10%,
+      color-mix(in srgb, #fbe407 7%, transparent),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at 76% 78%,
+      color-mix(in srgb, #e63946 6%, transparent),
+      transparent 38%
+    ),
+    radial-gradient(
+      circle at 42% 58%,
+      color-mix(in srgb, #e63946 4%, transparent),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 18% 92%,
+      color-mix(in srgb, #0c2fdf 4%, transparent),
+      transparent 42%
+    );
+}
+
+.dark .page-backdrop {
   background-image:
     radial-gradient(
       circle at 12% 18%,
