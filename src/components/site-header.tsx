@@ -9,15 +9,15 @@ import { ThemeToggle } from "@/components/theme-toggle";
 function MenuIcon() {
   return (
     <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.8"
-      strokeLinecap="round"
-      className="h-5 w-5"
-      aria-hidden="true"
+      viewBox='0 0 24 24'
+      fill='none'
+      stroke='currentColor'
+      strokeWidth='1.8'
+      strokeLinecap='round'
+      className='h-5 w-5'
+      aria-hidden='true'
     >
-      <path d="M4 7h16M4 12h16M4 17h16" />
+      <path d='M4 7h16M4 12h16M4 17h16' />
     </svg>
   );
 }
@@ -25,15 +25,15 @@ function MenuIcon() {
 function CloseIcon() {
   return (
     <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.8"
-      strokeLinecap="round"
-      className="h-5 w-5"
-      aria-hidden="true"
+      viewBox='0 0 24 24'
+      fill='none'
+      stroke='currentColor'
+      strokeWidth='1.8'
+      strokeLinecap='round'
+      className='h-5 w-5'
+      aria-hidden='true'
     >
-      <path d="M6 6l12 12M18 6L6 18" />
+      <path d='M6 6l12 12M18 6L6 18' />
     </svg>
   );
 }
@@ -73,22 +73,22 @@ export function SiteHeader() {
   }, [menuOpen]);
 
   return (
-    <header className="sticky top-0 z-30 border-b border-(--border) bg-(--surface-strong)/90 backdrop-blur">
-      <div className="relative z-40 mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-4 lg:px-8">
+    <header className='sticky top-0 z-30 border-b border-(--border) bg-(--surface-strong)/90 backdrop-blur'>
+      <div className='relative z-40 mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-4 lg:px-8'>
         <Link
-          href="/"
-          className="text-sm font-semibold tracking-[0.24em] text-foreground"
+          href='/'
+          className='text-3xl font-semibold tracking-[0.12em] text-foreground'
         >
           {siteConfig.name}
         </Link>
 
-        <div className="flex items-center gap-3">
-          <nav className="hidden items-center gap-6 text-sm text-(--muted-foreground) md:flex">
+        <div className='flex items-center gap-3'>
+          <nav className='hidden items-center gap-6 text-sm text-(--muted-foreground) md:flex'>
             {navItems.map((item) => (
               <Link
                 key={item.label}
                 href={item.href}
-                className="transition hover:text-(--accent)"
+                className='transition hover:text-(--accent)'
               >
                 {item.label}
               </Link>
@@ -98,8 +98,8 @@ export function SiteHeader() {
           <ThemeToggle />
 
           <button
-            type="button"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-(--border) bg-(--surface) text-foreground transition hover:border-(--accent) hover:text-(--accent) md:hidden"
+            type='button'
+            className='inline-flex h-10 w-10 items-center justify-center rounded-full border border-(--border) bg-(--surface) text-foreground transition hover:border-(--accent) hover:text-(--accent) md:hidden'
             aria-label={menuOpen ? "Close menu" : "Open menu"}
             aria-expanded={menuOpen}
             onClick={() => setMenuOpen((open) => !open)}
@@ -111,11 +111,11 @@ export function SiteHeader() {
 
       <AnimatePresence>
         {menuOpen ? (
-          <div className="md:hidden">
+          <div className='md:hidden'>
             <motion.button
-              type="button"
-              aria-label="Close menu"
-              className="fixed inset-0 z-20 bg-black/45 backdrop-blur-sm"
+              type='button'
+              aria-label='Close menu'
+              className='fixed inset-0 z-20 bg-black/45 backdrop-blur-sm'
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -128,14 +128,14 @@ export function SiteHeader() {
               animate={{ height: "auto", opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
               transition={{ duration: 0.22, ease: "easeOut" }}
-              className="absolute inset-x-0 top-full z-30 overflow-hidden border-b border-(--border) bg-(--surface-strong)/95 backdrop-blur"
+              className='absolute inset-x-0 top-full z-30 overflow-hidden border-b border-(--border) bg-(--surface-strong)/95 backdrop-blur'
             >
-              <div className="mx-auto flex w-full max-w-6xl flex-col gap-1 px-6 py-4 lg:px-8">
+              <div className='mx-auto flex w-full max-w-6xl flex-col gap-1 px-6 py-4 lg:px-8'>
                 {navItems.map((item) => (
                   <Link
                     key={item.label}
                     href={item.href}
-                    className="rounded-2xl px-4 py-3 text-base font-medium text-foreground transition hover:bg-(--surface) hover:text-(--accent)"
+                    className='rounded-2xl px-4 py-3 text-base font-medium text-foreground transition hover:bg-(--surface) hover:text-(--accent)'
                     onClick={() => setMenuOpen(false)}
                   >
                     {item.label}

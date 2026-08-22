@@ -34,7 +34,7 @@ export default function Home() {
             <p className='text-sm font-semibold uppercase tracking-[0.32em] text-(--accent)'>
               {siteConfig.role}
             </p>
-            <h1 className='mt-6 text-5xl font-semibold tracking-tight text-foreground sm:text-6xl'>
+            <h1 className='mt-6 text-3xl font-semibold tracking-tight text-foreground sm:text-5xl'>
               Building scalable frontend experiences with clarity and craft.
             </h1>
             <p className='mt-6 max-w-2xl text-lg leading-8 text-(--muted-foreground)'>
@@ -180,14 +180,29 @@ export default function Home() {
             >
               {siteConfig.email}
             </ButtonLink>
-            <ButtonLink href={`tel:${siteConfig.phone}`}>
-              {siteConfig.phone}
-            </ButtonLink>
+            <a
+              href={`tel:${siteConfig.phone}`}
+              className='inline-flex items-center gap-2 rounded-full border-2 border-solid border-(--border) px-6 py-3 text-sm font-semibold text-foreground transition hover:-translate-y-0.5 hover:border-(--button-outline-hover) hover:text-(--button-outline-hover)'
+            >
+              <svg
+                viewBox='0 0 24 24'
+                fill='none'
+                stroke='currentColor'
+                strokeWidth='1.8'
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                className='h-4 w-4'
+                aria-hidden='true'
+              >
+                <path d='M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z' />
+              </svg>
+              Give me a call
+            </a>
             {siteConfig.socialLinks.map((link) => (
               <ButtonLink
                 key={link.label}
                 href={link.href}
-                target={link.target ?? '_blank'}
+                target={link.target ?? "_blank"}
                 rel='noopener noreferrer'
               >
                 {link.label}
